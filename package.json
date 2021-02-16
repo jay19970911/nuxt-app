@@ -1,0 +1,19 @@
+{
+  "name": "my-nuxt-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "ant-design-vue": "^1.7.2",
+    "core-js": "^3.8.3",
+    "less": "3.12.2",
+    "less-loader": "7.1.0",
+    "nuxt": "^2.14.12"
+  },
+  "devDependencies": {}
+}
