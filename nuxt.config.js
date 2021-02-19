@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: '哎呦，不错哦',
+    title: 'HJay_Chou的个人网站',
     htmlAttrs: {
       lang: 'en'
     },
@@ -17,7 +17,8 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    'ant-design-vue/dist/antd.css'
+    'ant-design-vue/dist/antd.css',
+    './styles/index.less'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
