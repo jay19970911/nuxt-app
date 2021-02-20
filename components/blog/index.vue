@@ -7,7 +7,7 @@
         <div class="occupation">前端</div>
       </div>
     </div>
-    <blog-content />
+    <blog-content :list="list" />
     <common-footer />
   </div>
 </template>
@@ -17,11 +17,21 @@ import CommonHead from '@/common/common-head';
 import BlogContent from './components/blog-content';
 import CommonFooter from '@/common/common-footer';
 export default {
+  props: {
+    list: {
+      type: Array,
+      default: () => []
+    }
+  },
   components: {
     CommonHead,
     BlogContent,
     CommonFooter
-  }
+  },
+  data() {
+    return {};
+  },
+  mounted() {}
 };
 </script>
 

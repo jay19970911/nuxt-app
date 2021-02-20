@@ -15,11 +15,11 @@
             <div class="date">{{item.date}}</div>
             <div class="likes-num">
               <a-icon type="like" />
-              {{item.likes}}
+              {{item.likes_num}}
             </div>
             <div class="comments-num">
               <a-icon type="message" />
-              {{item.comments}}
+              {{item.contents_num}}
             </div>
             <div class="views-num">
               <a-icon type="eye" />
@@ -35,84 +35,17 @@
 <script>
 import BloggerAside from './blogger-aside';
 export default {
+  props: {
+    list: {
+      type: Array,
+      default: () => []
+    }
+  },
   components: {
     BloggerAside
   },
   data() {
-    return {
-      list: [
-        {
-          id: '1',
-          title: 'jQuery实现tab选项卡切换',
-          subtitle: '如何使用jQuery实现tab选项卡切换',
-          cover: 'https://img1.halobear.com/wedding/Fqxm1sbaD2fAkK4PNtAJLJ0htqpa.jpeg',
-          date: '2019-09-21 11:53:12',
-          views_num: 1362,
-          comments: 20,
-          likes: 100
-        },
-        {
-          id: '2',
-          title: 'jQuery实现tab选项卡切换',
-          subtitle: '如何使用jQuery实现tab选项卡切换',
-          cover: 'https://img1.halobear.com/wedding/Fqxm1sbaD2fAkK4PNtAJLJ0htqpa.jpeg',
-          date: '2019-09-21 11:53:12',
-          views_num: 1362,
-          comments: 20,
-          likes: 100
-        },
-        {
-          id: '3',
-          title: 'jQuery实现tab选项卡切换',
-          subtitle: '如何使用jQuery实现tab选项卡切换',
-          cover: 'https://img1.halobear.com/wedding/Fqxm1sbaD2fAkK4PNtAJLJ0htqpa.jpeg',
-          date: '2019-09-21 11:53:12',
-          views_num: 1362,
-          comments: 20,
-          likes: 100
-        },
-        {
-          id: '4',
-          title: 'jQuery实现tab选项卡切换',
-          subtitle: '如何使用jQuery实现tab选项卡切换',
-          cover: 'https://img1.halobear.com/wedding/Fqxm1sbaD2fAkK4PNtAJLJ0htqpa.jpeg',
-          date: '2019-09-21 11:53:12',
-          views_num: 1362,
-          comments: 20,
-          likes: 100
-        },
-        {
-          id: '5',
-          title: 'jQuery实现tab选项卡切换',
-          subtitle: '如何使用jQuery实现tab选项卡切换',
-          cover: 'https://img1.halobear.com/wedding/Fqxm1sbaD2fAkK4PNtAJLJ0htqpa.jpeg',
-          date: '2019-09-21 11:53:12',
-          views_num: 1362,
-          comments: 20,
-          likes: 100
-        },
-        {
-          id: '6',
-          title: 'jQuery实现tab选项卡切换',
-          subtitle: '如何使用jQuery实现tab选项卡切换',
-          cover: 'https://img1.halobear.com/wedding/Fqxm1sbaD2fAkK4PNtAJLJ0htqpa.jpeg',
-          date: '2019-09-21 11:53:12',
-          views_num: 1362,
-          comments: 20,
-          likes: 100
-        },
-        {
-          id: '7',
-          title: 'jQuery实现tab选项卡切换',
-          subtitle: '如何使用jQuery实现tab选项卡切换',
-          cover: 'https://img1.halobear.com/wedding/Fqxm1sbaD2fAkK4PNtAJLJ0htqpa.jpeg',
-          date: '2019-09-21 11:53:12',
-          views_num: 1362,
-          comments: 20,
-          likes: 100
-        }
-      ]
-    };
+    return {};
   }
 };
 </script>
