@@ -10,3 +10,11 @@ export function list(params) {
   })
 }
 
+// 博客详情
+export function detail(id) {
+  return request({
+    url: `/api/blog/detail/${id}`,
+    method: 'get'
+  })
+}
+

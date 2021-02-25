@@ -5,7 +5,12 @@
       <blogger-aside />
       <!-- 中间的列表内容区 -->
       <div class="blog-list-content">
-        <div class="blog-item" v-for="item in list" :key="item.id">
+        <router-link
+          :to="{name: 'blog-id',params: {id:item.id} }"
+          class="blog-item"
+          v-for="item in list"
+          :key="item.id"
+        >
           <div class="title">{{item.title}}</div>
           <div class="content flex">
             <img :src="item.cover" alt class="cover" />
@@ -26,7 +31,7 @@
               {{item.views_num}}
             </div>
           </div>
-        </div>
+        </router-link>
       </div>
     </div>
   </div>
