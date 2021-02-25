@@ -12,7 +12,7 @@ export default {
     Blog
   },
   async asyncData() {
-    const { data } = await Api.list();
+    const data = await Api.list();
     const { list = [] } = data;
     return {
       list

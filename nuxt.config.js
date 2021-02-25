@@ -1,3 +1,5 @@
+import { PROXY } from "./constants"
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -14,6 +16,18 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  // proxy: {
+  //   '/api/': {
+  //     target: 'http://localhost:3010',
+  //     pathRewrite: {
+  //       '^/api/': ''
+  //     }
+  //   }
+  // },
+
+  env: {
+    NODE_ENV: process.env.NODE_ENV || "development"
+  },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
@@ -29,8 +43,13 @@ export default {
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
+  proxy: {
+    "/api": PROXY
+  },
+
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    "@nuxtjs/proxy"
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

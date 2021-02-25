@@ -1,11 +1,11 @@
-import axios from 'axios'
-import { baseURL } from '@/constants'
+// import axios from 'axios'
+// import { baseURL } from '@/constants'
+import request from '@/utils/request'
 
 // 博客列表
 export function list(params) {
-  return axios({
-    baseURL: baseURL,
-    url: '/blog/query',
+  return request({
+    url: '/api/blog/query',
     params
   })
 }
