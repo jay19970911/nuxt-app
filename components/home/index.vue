@@ -9,6 +9,7 @@
     <!-- 个人简介 -->
     <!-- 参与项目 -->
     <home-project />
+    <mantle-mask v-model="visible" />
     <!-- 公共底部 -->
     <common-footer />
   </div>
@@ -16,6 +17,7 @@
 
 <script>
 import CommonHead from '@/common/common-head';
+import MantleMask from '@/common/mantle-mask';
 import HomeBanner from './components/home-banner';
 import HomeIntro from './components/home-intro';
 import HomeProject from './components/home-project';
@@ -26,7 +28,13 @@ export default {
     HomeBanner,
     HomeIntro,
     HomeProject,
-    CommonFooter
+    CommonFooter,
+    MantleMask
+  },
+  data() {
+    return {
+      visible: false
+    };
   }
 };
 </script>

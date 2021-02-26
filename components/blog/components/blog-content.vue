@@ -67,6 +67,8 @@ export default {
   .blog-item {
     margin-bottom: 20px;
     padding: 10px;
+    display: block;
+    color: #303238;
     border-bottom: 1px solid #f6f6f6;
     &:hover {
       box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.1);
