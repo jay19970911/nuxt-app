@@ -1,10 +1,10 @@
 <template>
   <div class="blog-detail-container">
+    <common-head />
     <div class="blog-detail-box page">
-      <common-head />
       <div class="blog-detail-header">
         <div class="bread-crumb">博客列表 > 博文 > 博客详情</div>
-        <div class="blog-title">使用JQuery实现tab选项卡切换</div>
+        <div class="blog-title">{{ data.title }}</div>
         <div class="text-info flex">
           <span class="text">时间：2021-02-24</span>
           <span class="line">|</span>
@@ -17,21 +17,24 @@
           <div v-html="data.md"></div>
         </div>
         <!-- 右侧推荐部分 -->
-        <div class="right-recommend">
-          3
-          <!-- 博文推荐 -->
-          <!-- 项目推荐 -->
-        </div>
+        <!-- <div class="right-recommend">
+        3-->
+        <!-- 博文推荐 -->
+        <!-- 项目推荐 -->
+        <!-- </div> -->
       </div>
     </div>
+    <common-footer />
   </div>
 </template>
 
 <script>
 import CommonHead from '@/common/common-head';
+import CommonFooter from '@/common/common-footer';
 export default {
   components: {
-    CommonHead
+    CommonHead,
+    CommonFooter
   },
   props: {
     data: {
@@ -47,10 +50,13 @@ export default {
 
 <style lang="less" scoped>
 .blog-detail-container {
-  padding: 20px 0 60px;
   width: 100%;
   overflow: hidden;
-  background: #eff1f4;
+  // background: #eff1f4;
+  background: #f9f9f9;
+}
+.blog-detail-box {
+  padding: 20px 0 60px;
 }
 .blog-detail-header {
   margin-bottom: 50px;
@@ -87,7 +93,7 @@ export default {
   .main-content {
     flex: 1;
     border: 1px solid #dfdfdf;
-    padding: 40px 60px 0;
+    padding: 40px 60px 40px;
     box-sizing: border-box;
     background: #fff;
   }
