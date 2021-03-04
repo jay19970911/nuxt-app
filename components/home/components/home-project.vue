@@ -1,7 +1,9 @@
 <template>
   <div class="home-project page">
     <div class="project-title">
-      <div class="title">我的项目</div>
+      <div class="head-title">
+        <h3 class="title">我的项目</h3>
+      </div>
       <div class="cate-list"></div>
     </div>
     <!-- 我的项目 -->
@@ -31,11 +33,13 @@ export default {
 .home-project {
   padding: 80px 0;
 }
-.project-title {
-  font-size: 28px;
+.head-title {
+  padding-bottom: 20px;
+}
+.title {
   font-weight: 600;
   color: #323038;
   line-height: 40px;
-  padding-bottom: 30px;
+  font-size: 20px;
 }
 </style>

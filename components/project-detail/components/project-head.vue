@@ -3,11 +3,11 @@
     <!-- 项目的基本内容 -->
     <div class="head-info">
       <div class="bread-crumb">博客列表 > 博文 > 博客详情</div>
-      <div class="title">幻熊科技 | 幻熊结婚圈</div>
+      <div class="title">幻熊科技 | {{ data.name }}</div>
       <div class="text-info flex">
-        <span class="text">时间：2021-02-24</span>
+        <span class="text">时间：{{ data.created_at.split(' ')[0] }}</span>
         <span class="line">|</span>
-        <span class="text">分类: JQuery</span>
+        <span class="text">分类: {{ data.skill }}</span>
       </div>
     </div>
     <!-- 我负责的模块 -->
@@ -24,7 +24,14 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    data: {
+      type: Object,
+      default: () => ({})
+    }
+  }
+};
 </script>
 
 <style lang="less" scoped>
@@ -34,7 +41,8 @@ export default {};
 .head-info {
   width: 100%;
   padding: 20px 40px;
-  background: pink;
+  background: #fff;
+  border: 1px solid #dfdfdf;
   .bread-crumb {
     font-size: 14px;
     font-weight: 400;
@@ -66,7 +74,8 @@ export default {};
 }
 .card {
   width: 100%;
-  background: pink;
+  background: #fff;
+  border: 1px solid #dfdfdf;
   padding: 20px 40px;
   margin: 20px 0;
 }

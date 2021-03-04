@@ -1,6 +1,11 @@
 <template>
   <div class="project-list flex">
-    <div class="item" v-for="item in project" :key="item.id">
+    <router-link
+      :to="{name: 'project-id',params: {id:item.id} }"
+      class="item"
+      v-for="item in project.slice(0,6)"
+      :key="item.id"
+    >
       <div class="card">
         <div
           class="card-title ellipsis hover-primary"
@@ -23,7 +28,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </router-link>
   </div>
 </template>
 

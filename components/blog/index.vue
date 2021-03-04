@@ -7,12 +7,18 @@
         <div class="occupation">前端</div>
       </div>
     </div>
-    <blog-content :list="list" />
+    <blog-content
+      :list="list"
+      :payload="payload"
+      @fetch="$emit('fetch', $event)"
+    />
     <common-footer />
   </div>
 </template>
 
 <script>
+import * as Api from '@/api/blog';
+
 import CommonHead from '@/common/common-head';
 import BlogContent from './components/blog-content';
 import CommonFooter from '@/common/common-footer';
@@ -21,6 +27,10 @@ export default {
     list: {
       type: Array,
       default: () => []
+    },
+    payload: {
+      type: Object,
+      default: () => ({})
     }
   },
   components: {
@@ -31,7 +41,8 @@ export default {
   data() {
     return {};
   },
-  mounted() {}
+  mounted() {},
+  methods: {}
 };
 </script>
 
