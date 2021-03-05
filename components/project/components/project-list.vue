@@ -18,7 +18,7 @@
               <div class="tool">{{ item.tool }}</div>
             </div>
           </div>
-          <div class="cate">{{ item.cate }}</div>
+          <div class="cate">{{ item.project_tag }}</div>
         </div>
       </router-link>
     </div>

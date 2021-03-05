@@ -89,11 +89,14 @@ export default {
 }
 .blog-conent {
   .main-content {
-    flex: 1;
+    width: 100%;
     border: 1px solid #dfdfdf;
     padding: 40px 60px 40px;
     box-sizing: border-box;
     background: #fff;
+    & /deep/ img {
+      width: 100%;
+    }
   }
   .right-recommend {
     width: 500px;
