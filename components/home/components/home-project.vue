@@ -8,6 +8,9 @@
     </div>
     <!-- 我的项目 -->
     <project-list :project="project" />
+    <div class="read-more-btn">
+      <router-link :to="{ name: 'project'}" class="more-btn">查看更多项目</router-link>
+    </div>
   </div>
 </template>
 
@@ -41,5 +44,17 @@ export default {
   color: #323038;
   line-height: 40px;
   font-size: 20px;
+}
+.more-btn {
+  width: 210px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  background-color: #0185f2;
+  color: #fff;
+  margin: 10px auto 0;
+  border-radius: 3px;
 }
 </style>

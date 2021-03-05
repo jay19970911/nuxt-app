@@ -10,6 +10,8 @@
     <blog-content
       :list="list"
       :payload="payload"
+      :total="total"
+      @changePayload="$emit('upload:payload',payload)"
       @fetch="$emit('fetch', $event)"
     />
     <common-footer />
@@ -31,6 +33,10 @@ export default {
     payload: {
       type: Object,
       default: () => ({})
+    },
+    total: {
+      type: Number,
+      default: 0
     }
   },
   components: {

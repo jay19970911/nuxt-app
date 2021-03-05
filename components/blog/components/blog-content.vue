@@ -35,6 +35,13 @@
             </div>
           </div>
         </router-link>
+        <div class="pagination">
+          <my-pagination
+            :total="total"
+            :payload.sync="payload"
+            @change="changePage"
+          ></my-pagination>
+        </div>
       </div>
       <div class="blank-box" v-else>
         <Blank />
@@ -47,20 +54,39 @@
 import BloggerInfo from './blogger-info';
 import BlogSearch from './blog-search';
 import Blank from '@/common/blank';
+import MyPagination from '@/common/MyPagination';
 export default {
+  components: {
+    BloggerInfo,
+    BlogSearch,
+    Blank,
+    MyPagination
+  },
   props: {
     list: {
       type: Array,
       default: () => []
+    },
+    payload: {
+      type: Object,
+      default: () => ({})
+    },
+    total: {
+      type: Number,
+      default: 0
     }
   },
-  components: {
-    BloggerInfo,
-    BlogSearch,
-    Blank
-  },
   data() {
-    return {};
+    return {
+      p: { ...this.payload }
+    };
+  },
+  methods: {
+    changePage(fixData = {}) {
+      console.log(21);
+      const payload = { ...this.p, ...fixData };
+      this.$emit('fetch', payload);
+    }
   }
 };
 </script>

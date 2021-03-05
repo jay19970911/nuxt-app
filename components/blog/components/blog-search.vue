@@ -3,7 +3,7 @@
     <input
       type="text"
       class="input"
-      placeholder="请输入关键词"
+      placeholder="搜博主文章"
       ref="input"
       v-model="text"
       @keyup.enter="submit"

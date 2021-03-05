@@ -140,6 +140,7 @@ export default {
     .user {
       font-size: 18px;
       font-weight: 600;
+      margin-bottom: 20px;
     }
   }
   .text {
@@ -175,7 +176,7 @@ export default {
       flex-wrap: wrap;
       font-size: 14px;
       color: #999;
-      margin: 10px 0;
+      line-height: 30px;
       p {
         width: 100%;
       }

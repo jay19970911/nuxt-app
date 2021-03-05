@@ -75,7 +75,7 @@ export default {
       type: Object,
       default: () => ({
         page: 1,
-        per_page: 20
+        per_page: 10
       })
     },
     prevent: {
@@ -193,34 +193,34 @@ export default {
     font-weight: bold;
   }
 }
-@media screen and (max-width: @mobile-width) {
-  .my-pagination {
-    border-top: 10px solid #eff1f4;
-    border-bottom: 10px solid #eff1f4;
-    height: 70px;
-    background-color: #fff;
-    .prev-view,
-    .next-view,
-    .page-view {
-      background-color: #fff !important;
-      border-color: white !important;
-    }
-    .page-view,
-    .ellipsis {
-      display: none;
-    }
-    .active-view {
-      display: flex;
-      color: #222 !important;
-      &::before {
-        content: '第';
-        padding: 0 0.2em;
-      }
-      &::after {
-        content: '页';
-        padding: 0 0.2em;
-      }
-    }
-  }
-}
+// @media screen and (max-width: @mobile-width) {
+//   .my-pagination {
+//     border-top: 10px solid #eff1f4;
+//     border-bottom: 10px solid #eff1f4;
+//     height: 70px;
+//     background-color: #fff;
+//     .prev-view,
+//     .next-view,
+//     .page-view {
+//       background-color: #fff !important;
+//       border-color: white !important;
+//     }
+//     .page-view,
+//     .ellipsis {
+//       display: none;
+//     }
+//     .active-view {
+//       display: flex;
+//       color: #222 !important;
+//       &::before {
+//         content: '第';
+//         padding: 0 0.2em;
+//       }
+//       &::after {
+//         content: '页';
+//         padding: 0 0.2em;
+//       }
+//     }
+//   }
+// }
 </style>

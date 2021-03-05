@@ -8,7 +8,7 @@
         <div class="content-box">
           <!-- 产品介绍 -->
           <div class="intro-text">
-            <div class="title">产品介绍</div>
+            <div class="title">项目介绍</div>
             <div class="text">{{ data.desc_info }}</div>
           </div>
           <!-- 作品图集 -->
@@ -18,6 +18,7 @@
         </div>
       </div>
     </div>
+    <common-footer />
   </div>
 </template>
 
@@ -26,6 +27,7 @@ import CommonHead from '@/common/common-head';
 import ProjectHead from './components/project-head';
 import WorksImages from './components/works-images';
 import CodeHighlights from './components/code-highlights';
+import CommonFooter from '@/common/common-footer';
 export default {
   props: {
     data: {
@@ -37,7 +39,8 @@ export default {
     CommonHead,
     ProjectHead,
     WorksImages,
-    CodeHighlights
+    CodeHighlights,
+    CommonFooter
   },
   mounted() {
     console.log(this.data, 9);
@@ -58,7 +61,7 @@ export default {
   line-height: 25px;
 }
 .text {
-  padding: 20px;
+  padding: 20px 40px;
   background: #fff;
   border-radius: 3px;
   border: 1px solid #dfdfdf;
