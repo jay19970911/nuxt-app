@@ -50,8 +50,8 @@ export default {
           to: { name: 'blog' }
         },
         {
-          title: '关于',
-          to: { name: '' }
+          title: '个人主页',
+          to: { name: 'home-page' }
         }
       ]
     };

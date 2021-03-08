@@ -6,7 +6,7 @@ import { PROXY } from '@/constants'
 const instance = Axios.create({
   baseURL: process.server ? PROXY : '',
   headers: {
-    Authorization: 'bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjE0MjM2OTA0LCJleHAiOjE2MTQ4NDE3MDR9.bCZ_DDOSBn0nF5EG8JKu6zL-U3YTyPgrxdsY2efemmM'
+    Authorization: 'bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjE0ODQyMjU1LCJleHAiOjE3NzI1MjIyNTV9.g9ya31UmqvqGec9HfW8IrFCp07SYKPVjni9elv9rde0'
   }
 })
 

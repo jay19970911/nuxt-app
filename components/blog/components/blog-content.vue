@@ -2,9 +2,12 @@
   <div class="blog-list-container">
     <div class="page flex">
       <!-- 左侧的博主个人信息 -->
-      <blogger-aside />
+      <div class="blog-aside">
+        <blogger-info />
+        <blog-search @fetch="$emit('fetch', $event)" />
+      </div>
       <!-- 中间的列表内容区 -->
-      <div class="blog-list-content">
+      <div class="blog-list-content" v-if="list.length">
         <router-link
           :to="{name: 'blog-id',params: {id:item.id} }"
           class="blog-item"
@@ -32,25 +35,58 @@
             </div>
           </div>
         </router-link>
+        <div class="pagination">
+          <my-pagination
+            :total="total"
+            :payload.sync="payload"
+            @change="changePage"
+          ></my-pagination>
+        </div>
+      </div>
+      <div class="blank-box" v-else>
+        <Blank />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import BloggerAside from './blogger-aside';
+import BloggerInfo from './blogger-info';
+import BlogSearch from './blog-search';
+import Blank from '@/common/blank';
+import MyPagination from '@/common/MyPagination';
 export default {
+  components: {
+    BloggerInfo,
+    BlogSearch,
+    Blank,
+    MyPagination
+  },
   props: {
     list: {
       type: Array,
       default: () => []
+    },
+    payload: {
+      type: Object,
+      default: () => ({})
+    },
+    total: {
+      type: Number,
+      default: 0
     }
   },
-  components: {
-    BloggerAside
-  },
   data() {
-    return {};
+    return {
+      p: { ...this.payload }
+    };
+  },
+  methods: {
+    changePage(fixData = {}) {
+      console.log(21);
+      const payload = { ...this.p, ...fixData };
+      this.$emit('fetch', payload);
+    }
   }
 };
 </script>
@@ -59,10 +95,18 @@ export default {
 .blog-list-container {
   background: #f9f9f9;
   padding-bottom: 80px;
+  min-height: 80vh;
+}
+.blog-aside {
+  margin-right: 20px;
+}
+.blank-box {
+  width: 100%;
 }
 .blog-list-content {
   padding: 30px;
   background: #fff;
+  min-height: 80vh;
   flex: 1;
   .blog-item {
     margin-bottom: 20px;

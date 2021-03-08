@@ -4,12 +4,11 @@
     <common-head ghost absolute />
     <!-- 首页banner -->
     <home-banner />
-    <!-- 自我介绍 -->
-    <home-intro />
-    <!-- 个人简介 -->
+    <!-- 首页博客列表 -->
+    <home-blog :blog="blog" />
     <!-- 参与项目 -->
-    <home-project />
-    <mantle-mask v-model="visible" />
+    <home-project :project="project" />
+    <!-- <mantle-mask v-model="visible" /> -->
     <!-- 公共底部 -->
     <common-footer />
   </div>
@@ -17,27 +16,41 @@
 
 <script>
 import CommonHead from '@/common/common-head';
-import MantleMask from '@/common/mantle-mask';
+// import MantleMask from '@/common/mantle-mask';
 import HomeBanner from './components/home-banner';
-import HomeIntro from './components/home-intro';
+import HomeBlog from './components/home-blog';
 import HomeProject from './components/home-project';
 import CommonFooter from '@/common/common-footer';
 export default {
   components: {
     CommonHead,
     HomeBanner,
-    HomeIntro,
+    HomeBlog,
     HomeProject,
-    CommonFooter,
-    MantleMask
+    CommonFooter
+    // MantleMask
+  },
+  props: {
+    blog: {
+      type: Array,
+      default: () => []
+    },
+    project: {
+      type: Array,
+      default: () => []
+    }
   },
   data() {
     return {
       visible: false
     };
-  }
+  },
+  mounted() {}
 };
 </script>
 
-<style>
+<style lang="less" scoped>
+.home-container {
+  background-color: #f4f6f8;
+}
 </style>
